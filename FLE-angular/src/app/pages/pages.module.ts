@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
+import { CarruselComponent } from './carrusel/carrusel.component';
 
 
 
 @NgModule({
   declarations: [
-    RegistroComponent
+    RegistroComponent,
+    CarruselComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    RegistroComponent
+    RegistroComponent,
+    CarruselComponent
   ]
 })
 export class PagesModule { }
