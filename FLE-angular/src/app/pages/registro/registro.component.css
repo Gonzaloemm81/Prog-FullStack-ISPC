@@ -41,3 +41,10 @@ button:hover{
 .botonIngresar{
     background-color: rgb(255, 119, 0);
 }
+@media (min-width: 481px) and (max-width: 768px) {
+    section {
+      width: 100%;
+      border-radius: 0%;
+      margin: 0%;
+    }
+  }
