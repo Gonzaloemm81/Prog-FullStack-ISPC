@@ -6,6 +6,7 @@ import { CarruselComponent } from './carrusel/carrusel.component';
 =======
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 >>>>>>> 9eb44713763d32b194d24609fb9052f64be896e7
+import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 
 
 
@@ -13,8 +14,7 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
   declarations: [
 <<<<<<< HEAD
     RegistroComponent,
-    CarruselComponent
-=======
+    CarruselComponent,
     IniciosesionComponent
 >>>>>>> 9eb44713763d32b194d24609fb9052f64be896e7
   ],
@@ -24,7 +24,8 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
   exports: [
 <<<<<<< HEAD
     RegistroComponent,
-    CarruselComponent
+    CarruselComponent,
+    IniciosesionComponent
 =======
     IniciosesionComponent
 >>>>>>> 9eb44713763d32b194d24609fb9052f64be896e7
