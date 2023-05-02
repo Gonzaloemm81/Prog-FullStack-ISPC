@@ -37,6 +37,9 @@ section {
     left: 50%;
     transform: translateX(-50%);
   }
+  input::placeholder {
+    text-indent: 10px;
+  }
   
   #usuario,
   #password {
