@@ -1,0 +1,35 @@
+
+  <section class="secCol2" id="bloque-calculo">
+    <h2>¿Querés hacer un envío?</h2>
+    <input type="text" id="peso" placeholder="Peso kg" name="Peso" /><br />
+    <div><label for="">Tipo de Envio</label>
+    <select title= "opcionPeso"name="" id="">
+      <option value="">A Ligero</option>
+      <option value="">B Pesado</option>
+      <option value="">C Express</option>
+    </select>
+    </div>
+    <select title="opcionSucursal" name="" id="">
+      <option value="">Salida</option>
+      <option value="">Sucursal Ushuaia</option>
+      <option value="">Sucursal Narnia</option>
+      <option value="">Sucursal Alaska</option>
+    </select>
+    <select title="opcionDestino" name="" id="">
+      <option value="">Destino</option>
+      <option value="">Sucursal Antártida</option>
+      <option value="">Sucursal Fosa de las Marianas</option>
+      <option value="">Sucursal Júpiter</option></select
+    ><br />
+    <input
+      type="text"
+      placeholder="Precio"
+      name="Precio"
+      required
+    />
+    <form action="">
+      <button type="submit" onclick="return enviarCalculo();" >Calcular</button>
+      <p class="errorE" id="errorE"></p>
+    </form>
+    <br /><br />
+  </section>
