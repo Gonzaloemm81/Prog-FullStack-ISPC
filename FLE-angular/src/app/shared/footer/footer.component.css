@@ -32,28 +32,3 @@ iframe{
 .secCol3{
     background-color: rgb(255, 119, 0);
 }
-
-/* ----- -----  Mediaqueries ----- ----- */
-ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: orange;
-    top: 80px;
-    left: 100%;
-    text-align: center;
-    transition: all .5s;
-}
-li:hover{
-    background-color: black;
-}
-li a:hover, li a.active{
-    background: none;
-    color: rgb(0, 77, 184);
-}
-#check:checked ~ ul{
-    left: 0;
-}
-section{
-    width: 90%;
-}
