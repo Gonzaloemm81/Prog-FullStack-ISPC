@@ -1,5 +1,5 @@
 section{
-    height: auto;
+    height: 700px;
     width: 60%;
     background-color: white;
     margin: 0 auto;
@@ -47,4 +47,8 @@ button:hover{
       border-radius: 0%;
       margin: 0%;
     }
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> 915af0b600bf4238b6d80b871f63e76d3f20ab95
