@@ -3,24 +3,20 @@ section {
     width: 60%;
     background-color: rgb(23, 23, 23);
     margin: 0 auto;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     border-radius: 20px;
     margin: 30px auto;
     padding: 5% 10%;
  
    
   }
-  .titulo{
-    
-    text-align: center;
-  }
   form{
-    margin-top: 144px;
-    display: grid;
-    place-items: center;
-   
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
   }
  
   h1 {
@@ -32,7 +28,7 @@ section {
  #usuario,#password{
     
     width: 15rem;
-    border-radius: 8px;
+    border-radius: 20px;
     border: none;
     margin-top: 0.5rem;
     text-align: center;
@@ -74,7 +70,7 @@ section {
   
  
   
-  @media (min-width: 481px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     section {
       width: 100%;
       border-radius: 0%;
