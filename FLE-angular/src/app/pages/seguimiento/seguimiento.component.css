@@ -1,0 +1,25 @@
+section {
+    height: auto;
+    width: 60%;
+    background-color: rgb(255, 119, 0);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 5% 10%;
+}
+
+h3 {
+    margin: 0%;
+}
+
+@media (max-width: 576px) {
+    section {
+        width: 100%;
+        border-radius: 0%;
+        margin: 0%;
+    }
+}
