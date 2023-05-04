@@ -4,6 +4,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 
 
 
@@ -12,7 +13,8 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
     RegistroComponent,
     CarruselComponent,
     ServiciosComponent,
-    IniciosesionComponent
+    IniciosesionComponent,
+    SeguimientoComponent
   ],
   imports: [
     CommonModule
@@ -20,8 +22,9 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
   exports: [
     RegistroComponent,
     CarruselComponent,
-    ServiciosComponent
-    
+    ServiciosComponent,
+    IniciosesionComponent,
+    SeguimientoComponent
   ]
 })
 export class PagesModule { }
