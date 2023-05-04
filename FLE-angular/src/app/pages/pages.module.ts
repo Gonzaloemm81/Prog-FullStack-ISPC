@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
-import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 
 
@@ -10,7 +10,7 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
   declarations: [
     RegistroComponent,
     CarruselComponent,
-    IniciosesionComponent
+    ServiciosComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +18,8 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
   exports: [
     RegistroComponent,
     CarruselComponent,
-    IniciosesionComponent
+    ServiciosComponent
+    
   ]
 })
 export class PagesModule { }
