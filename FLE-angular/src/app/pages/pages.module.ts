@@ -5,6 +5,7 @@ import { CarruselComponent } from './carrusel/carrusel.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { CalculadoraComponent } from './calculadora/calculadora.component';
 
 
 
@@ -14,7 +15,8 @@ import { SeguimientoComponent } from './seguimiento/seguimiento.component';
     CarruselComponent,
     ServiciosComponent,
     IniciosesionComponent,
-    SeguimientoComponent
+    SeguimientoComponent,
+    CalculadoraComponent
   ],
   imports: [
     CommonModule
@@ -24,7 +26,8 @@ import { SeguimientoComponent } from './seguimiento/seguimiento.component';
     CarruselComponent,
     ServiciosComponent,
     IniciosesionComponent,
-    SeguimientoComponent
+    SeguimientoComponent,
+    CalculadoraComponent
   ]
 })
 export class PagesModule { }
