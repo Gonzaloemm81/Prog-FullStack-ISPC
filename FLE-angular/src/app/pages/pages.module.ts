@@ -6,6 +6,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
@@ -16,7 +17,8 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
     ServiciosComponent,
     IniciosesionComponent,
     SeguimientoComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    CarritoComponent
   ],
   imports: [
     CommonModule
@@ -27,7 +29,8 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
     ServiciosComponent,
     IniciosesionComponent,
     SeguimientoComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    CarritoComponent
   ]
 })
 export class PagesModule { }
