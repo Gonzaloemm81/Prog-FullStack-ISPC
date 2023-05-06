@@ -27,14 +27,20 @@ section {
   
  #usuario,#password{
     
-    width: 15rem;
+    /* width: 15rem;
     border-radius: 20px;
     border: none;
     margin-top: 0.5rem;
-    text-align: center;
-    
+    text-align: center; */
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+ 
   }
-  span{
+  label{
     color: rgb(231, 229, 228);
   }
 
@@ -61,7 +67,10 @@ section {
   .registrarse{
     background-color: inherit;
   }
-  
+  button a{
+    text-decoration: none;
+    color: inherit;
+  }
   button:hover {
     background: orange;
     transition: 0.5s;
