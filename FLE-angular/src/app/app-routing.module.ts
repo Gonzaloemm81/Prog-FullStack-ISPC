@@ -6,6 +6,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component';
 import { CalculadoraComponent } from './pages/calculadora/calculadora.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 const routes: Routes = [{
     component: RegistroComponent,
@@ -30,6 +31,10 @@ const routes: Routes = [{
   {
     component: FooterComponent,
     path: 'footer'
+  },
+  {
+    component: CarritoComponent,
+    path: 'carrito'
   }
 
   ];
