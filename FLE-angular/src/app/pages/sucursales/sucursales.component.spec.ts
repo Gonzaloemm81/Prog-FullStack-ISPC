@@ -10,9 +10,7 @@ describe('SucursalesComponent', () => {
       declarations: [SucursalesComponent]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(SucursalesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

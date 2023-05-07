@@ -10,9 +10,7 @@ describe('ContactoComponent', () => {
       declarations: [ContactoComponent]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ContactoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
