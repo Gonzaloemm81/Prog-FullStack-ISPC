@@ -1,37 +1,28 @@
-<h1>Contacto</h1>
 
-<form (ngSubmit)="submitForm()" #contactForm="ngForm">
-  <label for="motivo">Motivo:</label>
-  <select id="motivo" name="motivo" [(ngModel)]="contacto.motivo" required>
-    <option value="" disabled selected>Seleccionar motivo</option>
-    <option value="Asesoramiento comercial">Asesoramiento comercial</option>
-    <option value="Devolucion de dinero">Devolución de dinero</option>
-    <option value="Generacion de etiqueta">Generación de etiqueta</option>
-    <option value="Problema de factura">Problema de factura</option>
-    <option value="Seguimiento de envio">Seguimiento de envío</option>
-  </select>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Contacto</title>
+  
+</head>
+<body>
+  <h1>Contacto</h1>
+  <form action="#" method="post">
+    <label for="motivo">Motivo:</label>
+    <input type="text" id="motivo" name="motivo" required>
 
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" [(ngModel)]="contacto.nombre" required>
-  
-  <label for="apellido">Apellido:</label>
-  <input type="text" id="apellido" name="apellido" [(ngModel)]="contacto.apellido" required>
-  
-  <label for="email">Correo electrónico:</label>
-  <input type="email" id="email" name="email" [(ngModel)]="contacto.email" required>
-  
-  <label for="telefono">Teléfono:</label>
-  <input type="tel" id="telefono" name="telefono" [(ngModel)]="contacto.telefono">
-  
-  <label for="preferencia">Preferencia de contacto:</label>
-  <select id="preferencia" name="preferencia" [(ngModel)]="contacto.preferencia">
-    <option value="" disabled selected>Seleccionar preferencia</option>
-    <option value="Email">Email</option>
-    <option value="Teléfono">Teléfono</option>
-  </select>
-  
-  <label for="mensaje">Mensaje:</label>
-  <textarea id="mensaje" name="mensaje" [(ngModel)]="contacto.mensaje" required></textarea>
-  
-  <button type="submit">Enviar</button>
-</form>
+    <label for="nombre">Nombre y Apellido:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
