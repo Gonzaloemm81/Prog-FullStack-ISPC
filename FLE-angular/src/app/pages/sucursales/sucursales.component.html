@@ -1,0 +1,18 @@
+<div class="sucursales">
+    <h1>Sucursales</h1>
+    <input type="text" placeholder="Buscar sucursal" [(ngModel)]="searchQuery">
+    <ul>
+      <li *ngFor="let direccion of direcciones">
+        {{ direccion }}
+      </li>
+    </ul>
+    <h2>Listado de Sucursales:</h2>
+    <ul>
+      <li *ngFor="let sucursal of filteredSucursales">
+        <h3>{{ sucursal.nombre }}</h3>
+        <p>{{ sucursal.direccion }}</p>
+        <p>{{ sucursal.telefono }}</p>
+      </li>
+    </ul>
+  </div>
+  
