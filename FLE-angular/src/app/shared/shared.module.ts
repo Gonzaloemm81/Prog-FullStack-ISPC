@@ -3,20 +3,24 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    InicioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, FormsModule
   ],
   exports: [
     HeaderComponent,FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    InicioComponent
   ]
 })
 export class SharedModule { }

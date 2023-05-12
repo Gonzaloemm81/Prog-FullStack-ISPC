@@ -1,0 +1,18 @@
+<section>
+    <!-- Property Binding con event binding-->
+    <div [class.bg-warning]="!bgPropertyValid" (mouseover)="onDiv()"></div>
+    <!-- Interpolation -->
+    <h1 class="mensaje-bienvenida">{{mensaje}}</h1>
+
+    <!-- Event Binding -->
+    <h2 (click)="evento()">Hola, soy un event binding</h2>
+
+    <!-- Two-way Data Binding -->
+    <input [(ngModel)]="message" type="text">
+    <p>{{ message }}</p>
+
+    <!-- Two-way Data Binding -->
+    <input [(ngModel)]="fontSizePx" type="number">
+    <p [style.fontSize.px]="fontSizePx">Hola soy un two way data binding</p>
+
+</section>

@@ -1,0 +1,14 @@
+.bg-warning{
+    background-color: yellow;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+} 
+
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    transition: all 0.5s ease-in-out;
+
+}
