@@ -12,7 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FooterComponent
   ],
   imports: [
-    CommonModule, FormsModule
+    CommonModule
   ],
   exports: [
     HeaderComponent,FooterComponent,

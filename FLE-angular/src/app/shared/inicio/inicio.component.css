@@ -1,2 +1,123 @@
+section {
+    height: auto;
+    width: 60%;
+    background-color: rgb(255, 119, 0);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 5% 10%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=search]{
+    margin-top: 0.5rem;
+    width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+input[type=submit]{
+    margin-top: 0.5rem;
+    height: 3em;
+    width: 15em;
+    background-color: black;
+    color: #fff;
+    padding: 0 20px ;
+    border-radius: 5px;
+    transition: background-color 0.6s ease;
+}
+input[type=submit]:hover{
+    background-color: #fff;
+    color: black;
+}
+
+
+h3 {
+    margin: 0%;
+}
+
+.caja{
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    background: rgb(124,255,253);
+    background: linear-gradient(180deg, rgba(124,255,253,1) 0%, rgba(0,131,200,1) 100%);
+    margin: 1rem;
+    transition: 1s;
+    box-shadow: 5px 5px 5px rgb(197, 56, 0);
+}
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(5px); }
+    55% { transform: translate(-5px); }
+    75% { transform: translate(5px); }
+    100% { transform: translate(0); }
+}
+.btn:hover{
+    animation: shake;
+    animation-duration: 0.5s;
+}
+.circulo{
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.hamburguesa{
+    aspect-ratio: 1/1;
+    width: auto;
+    padding: 1rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    /* justify-content: center;
+    align-items: center; */
+    transform: scale(0.3); 
+}
+.hamburguesa:hover{
+    transform: scale(0.35);
+    transition: 0.5s;
+    position: relative;
+}
+.lines{
+    width: 120px;
+    height: 20px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    margin-top: 9px;
+    background-color: #fff;
+    transition: 0.5s;
+
+
+}
+.l1{
+    transform:  translateY(36px) rotate(45deg);
+    transition: 0.5s;
+}
+.l2{
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+.l3{
+    height: 0px;
+    transition: 0.3s;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+    section {
+      width: 100%;
+      border-radius: 0%;
+      margin: 0%;
+      display: block;
+      text-align: center;
+    }
+  }
 
 }
