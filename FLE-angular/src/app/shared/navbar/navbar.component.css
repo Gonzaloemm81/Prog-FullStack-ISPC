@@ -45,6 +45,49 @@ li a.active, li a:hover{
 #check{
     display: none;
 }
+
+/* Icono menu hamburguesa */
+.hamburguesa{
+    aspect-ratio: 1/1;
+    width: auto;
+    padding: 1rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    /* justify-content: center;
+    align-items: center; */
+    transform: scale(0.25); 
+}
+.hamburguesa:hover{
+    transform: scale(0.3);
+    transition: 0.5s;
+    position: relative;
+}
+.lines{
+    width: 120px;
+    height: 20px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    margin-top: 9px;
+    background-color: #fff;
+    transition: 0.5s;
+
+
+}
+.l1{
+    transform:  translateY(36px) rotate(45deg);
+    transition: 0.5s;
+    top: 500px;
+}
+.l2{
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+.l3{
+    height: 0px;
+    transition: 0.3s;
+}
 @media (max-width: 980px){
     nav{
         justify-content: end;

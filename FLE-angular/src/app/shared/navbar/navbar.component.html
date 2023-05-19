@@ -1,7 +1,11 @@
 <nav>
   <input title="check" type="checkbox" name="check" id="check" />
   <label for="check" class="checkbtn">
-    <i class="fas fa-bars"></i>
+    <div class="hamburguesa" (click)="onMenu()">
+      <div class="lines" [class.l1]="menu"></div>
+      <div class="lines" [class.l2]="menu"></div>
+      <div class="lines" [class.l3]="menu"></div>
+    </div>
   </label>
   <ul>
     <li><a class="" href="">Inicio</a></li>
