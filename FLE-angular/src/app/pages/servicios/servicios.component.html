@@ -1,32 +1,14 @@
 <section class="secCol3">
-  <div class="card">
-    <h4>Nombre del Servicio</h4>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
-      expedita quo! At provident nostrum consectetur odit, explicabo praesentium
-      numquam culpa
-    </p>
-    <h5>$XXXX.XX</h5>
-    <button type="submit">Contratar</button><br />
-  </div>
-  <div class="card">
-    <h4>Nombre del Servicio</h4>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
-      expedita quo! At provident nostrum consectetur odit, explicabo praesentium
-      numquam culpa
-    </p>
-    <h5>$XXXX.XX</h5>
-    <button type="submit">Contratar</button><br />
-  </div>
-  <div class="card">
-    <h4>Nombre del Servicio</h4>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
-      expedita quo! At provident nostrum consectetur odit, explicabo praesentium
-      numquam culpa
-    </p>
-    <h5>$XXXX.XX</h5>
-    <button type="submit">Contratar</button><br />
+  <div *ngFor="let api of serv" class="card">
+    <div>
+      <h4>{{ api.title }}</h4>
+      <p>
+        {{ api.description }}
+      </p>
+    </div>
+    <div>
+      <h5>Hasta: {{ api.price | currency }}</h5>
+      <button type="submit" href="carrito">Contratar</button><br />
+    </div>
   </div>
 </section>
