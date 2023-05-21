@@ -33,7 +33,7 @@ class Destino(models.Model):
 class Sucursal(models.Model)
     
     id_sucursal = models.BigIntegerField(primary_key=True)
-    postal_cod = models.ForeingKey(Destino, to_field="cod_postal", on_delete.CASCADE)
+    postal_cod = models.ForeingKey(Destino, to_field="cod_postal", on_delete=models.CASCADE)
     class Meta:
         db_table="sucursal"
         verbose_name="Tabla de sucursales"
