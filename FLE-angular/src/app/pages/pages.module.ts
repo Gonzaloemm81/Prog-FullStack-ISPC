@@ -9,7 +9,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ContactoComponent } from './Contacto/contacto.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
-
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { SucursalesComponent } from './sucursales/sucursales.component';
     SucursalesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,ReactiveFormsModule
   ],
   exports: [
     RegistroComponent,
