@@ -10,10 +10,9 @@ export class RegistroComponent implements OnInit {
   registroForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { 
-    this.registroForm = this.formBuilder.group({
-    });
-
+    this.registroForm = this.formBuilder.group({});
   }
+
   ngOnInit() {
     this.registroForm = this.formBuilder.group({
       idUsuario: ['', Validators.required],
@@ -26,8 +25,14 @@ export class RegistroComponent implements OnInit {
     });
   }
 
-  onRegistro(event: any) {
-
+  onRegistro(event: Event) {
+    event.preventDefault();
+    
+    if (this.registroForm.valid) {
+      alert("desea confirmar su registro...");
+    } else {
+      this.markAllFieldsAsTouched(this.registroForm);
+    }
   }
 
   mustMatch(controlName: string, matchingControlName: string) {
@@ -35,7 +40,7 @@ export class RegistroComponent implements OnInit {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      if (matchingControl.errors && !matchingControl.hasError('mustMatch')) {
         return;
       }
 
@@ -45,5 +50,14 @@ export class RegistroComponent implements OnInit {
         matchingControl.setErrors(null);
       }
     };
+  }
+
+  markAllFieldsAsTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+      if (control instanceof FormGroup) {
+        this.markAllFieldsAsTouched(control);
+      }
+    });
   }
 }
