@@ -1,42 +1,43 @@
 <section class="secCol3">
-  <form action="" method="POST" id="form">
-    <input
-      type="text"
-      placeholder="ID usuario"
-      name="ID usuario"
-      id="ID usuario"
-      required
-    />
-    <br />
-    <input
-      type="text"
-      placeholder="Usuario"
-      name="usuario"
-      id="usuario"
-      required
-    />
-    <br />
-    <input type="email" placeholder="Email" name="mail" id="mail" required />
-    <br />
-    <input
-      type="password"
-      placeholder="Contraseña"
-      name="password"
-      id="password"
-      required
-    />
-    <br />
-    <input
-      type="password"
-      placeholder="Repetir contraseña"
-      name="repetir contraseña"
-      id="repetir contraseña"
-      required
-    /><br />
-    <button type="submit">Registrarme</button><br />
-    <button class="botonIngresar" type="submit">
-      <a href="iniciosesion">Ya tengo cuenta</a></button
-    ><br />
+  <form action="#" method="post" [formGroup]="registroForm" (ngSubmit)="onRegistro($event)">
+    <div>
+      <label for="idUsuario">ID Usuario:</label>
+      <input type="text" id="idUsuario" formControlName="idUsuario">
+      <div *ngIf="registroForm.controls['idUsuario'].errors?.['required'] && registroForm.controls['idUsuario'].touched" class="error">El ID de usuario es obligatorio.</div>
+    </div>
+  
+    <div>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" formControlName="usuario">
+      <div *ngIf="registroForm.controls['usuario'].errors?.['required'] && registroForm.controls['usuario'].touched" class="error">El usuario es obligatorio.</div>
+      <div *ngIf="registroForm.controls['usuario'].errors?.['minlength'] && registroForm.controls['usuario'].touched" class="error">El usuario debe tener al menos 2 caracteres.</div>
+      <div *ngIf="registroForm.controls['usuario'].errors?.['maxlength'] && registroForm.controls['usuario'].touched" class="error">El usuario no puede tener más de 50 caracteres.</div>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="registroForm.controls['email'].errors?.['required'] && registroForm.controls['email'].touched" class="error">El email es obligatorio.</div>
+      <div *ngIf="registroForm.controls['email'].errors?.['email'] && registroForm.controls['email'].touched" class="error">El email no es válido.</div>
+    </div>
+  
+    <div>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" formControlName="contrasena">
+      <div *ngIf="registroForm.controls['contrasena'].errors?.['required'] && registroForm.controls['contrasena'].touched" class="error">La contraseña es obligatoria.</div>
+      <div *ngIf="registroForm.controls['contrasena'].errors?.['minlength'] && registroForm.controls['contrasena'].touched" class="error">La contraseña debe tener al menos 6 caracteres.</div>
+      <div *ngIf="registroForm.controls['contrasena'].errors?.['pattern'] && registroForm.controls['contrasena'].touched" class="error">La contraseña debe contener al menos una letra minúscula, una letra mayúscula y un número.</div>
+    </div>
+  
+    <div>
+      <label for="confirmContrasena">Confirmar Contraseña:</label>
+      <input type="password" id="confirmContrasena" formControlName="confirmContrasena">
+      <div *ngIf="registroForm.controls['confirmContrasena'].errors?.['required'] && registroForm.controls['confirmContrasena'].touched" class="error">La confirmación de contraseña es obligatoria.</div>
+      <div *ngIf="registroForm.controls['confirmContrasena'].errors?.['mustMatch'] && registroForm.controls['confirmContrasena'].touched" class="error">Las contraseñas no coinciden.</div>
+    </div>
+  
+    <input type="submit" value="Registrarse"/>
   </form>
+  
 </section>
 <script src="./Javascript/formulario-registroleonel.js"></script>
