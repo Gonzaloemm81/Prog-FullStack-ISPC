@@ -1,0 +1,22 @@
+section {
+    height: auto;
+    width: 100%;
+    background-color: rgb(23, 23, 23);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    margin: 30px auto;
+    padding: 5% 10%;
+ 
+   
+  }
+ 
+td{
+  line-height: 50px;
+  text-align: center;
+}
+button ,input.btn{
+  width: 100%;
+}
