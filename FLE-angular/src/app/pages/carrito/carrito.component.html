@@ -4,8 +4,8 @@
   
       <label for="nombre_cliente">Nombre del Cliente:</label>
       <input type="text" id="nombre_cliente" name="nombre_cliente" formControlName="nombre_cliente" />
-      <div *ngIf="Nombre_cliente?.errors && Nombre_cliente?.touched">
-        <p *ngIf="Nombre_cliente?.hasError('required')" class="text-danger">
+      <div *ngIf="Nombre_Cliente?.errors && Nombre_Cliente?.touched">
+        <p *ngIf="Nombre_Cliente?.hasError('required')" class="text-danger">
           Nombre del Cliente Requerido</p></div>
   
       <label for="correo">Correo Electronico:</label>

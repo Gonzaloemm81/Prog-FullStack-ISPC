@@ -35,7 +35,7 @@ export class RegistroComponent implements OnInit {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      if (matchingControl.errors && !matchingControl.hasError('mustMatch')) {
         return;
       }
 
