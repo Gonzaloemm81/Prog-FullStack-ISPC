@@ -5,7 +5,7 @@
     (ngSubmit)="onEnviar($event)"
     class="mt-4"
   >
-    <div class="form-group">
+    <div class="m-3">
       <input
         type="text"
         placeholder="usuario"
@@ -29,16 +29,19 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <input
-        type="email"
-        placeholder="Email"
-        id="email"
-        formControlName="mail"
-        class="form-control"
-      />
+    <div class="m-3">
+            <input type="email" class="form-control" placeholder="Enter email" id='email'formControlName="mail">
+            <div *ngIf="Mail?.errors && Mail?.touched">
+                <p *ngIf="Mail?.hasError('required')" class="text-danger">
+                    El email es requerido.
+                </p>
+    
+                <p *ngIf="Mail?.hasError('email')" class="text-danger">
+                    El formato del email debe ser valido.
+                </p>
+            </div>
     </div>
-    <div class="form-group">
+    <div class="m-3">
       <input
         type="password"
         placeholder="contraseña"
@@ -56,19 +59,19 @@
       </div>
     </div>
 
-    <div class="form-check">
+    <div class="form-check m-3" >
       <input
         type="checkbox"
         id="recordarme"
-        (ngModel)="(recordarme)"
         class="form-check-input"
       />
       <label for="recordarme" class="form-check-label">recordarme</label>
     </div>
-
-    <button class="btn mt-3" type="submit">Ingresar</button>
-    <button class="registrarse btn mt-3 btn-outline-dark">
-      <a href="registro">Registrarse</a>
+    <div class="m-3 text-center">
+      <button class="btn mt-3" type="submit">Ingresar</button>
+      <button class="registrarse btn mt-3 btn-outline-dark">
+        <a href="registro">Registrarse</a>
     </button>
+   </div>
   </form>
 </section>
