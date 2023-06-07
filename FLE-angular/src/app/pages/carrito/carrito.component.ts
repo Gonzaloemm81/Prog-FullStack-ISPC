@@ -24,7 +24,8 @@ export class CarritoComponent implements OnInit {
     get Producto(){return this.form.get('producto');}
     onEnviar(event: Event){
       event.preventDefault;
-      if (this.form.valid) {alert ("Enviando al servidor...")}
+      if (this.form.valid) {
+        alert("Enviando al servidor...")}
       else{this.form.markAllAsTouched();}
     }
 ngOnInit(): void{}
