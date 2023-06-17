@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CommunicationService } from 'src/app/services/communication.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,6 +9,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit{
+
+
   // Formulario de nuevo usuario
   usuarioForm: FormGroup;
   userForm: boolean = false;
@@ -17,7 +20,8 @@ export class AdminComponent implements OnInit{
 
   // Consumo de la Api para ver usuarios
   constructor(private user: UsuariosService, 
-            private formBuilder: FormBuilder){
+            private formBuilder: FormBuilder,
+            private communicationService: CommunicationService){
 
     // consumo de la Api para ver usuarios
     this.user.obtenerUsuarios().subscribe({
@@ -40,18 +44,6 @@ export class AdminComponent implements OnInit{
     
     
   }
-  actualizarUsuarios() {
-    this.user.obtenerUsuarios().subscribe({
-      next: (userData) => {
-        this.usuarios = userData;
-      },
-      error: (errorData) => {
-        console.error(errorData);
-      }
-    });
-  }
-
-
   //Eliminar usuarios DELETE http 
   get User(){
     return this.usuarioForm.get('user');
@@ -67,13 +59,27 @@ export class AdminComponent implements OnInit{
     this.userForm = !this.userForm
   }
   
+  actualizarUsuarios() {
+    this.user.obtenerUsuarios().subscribe({
+      next: (userData) => {
+        this.usuarios = userData;
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      }
+    });
+  }
+
+
   
 
   ngOnInit(): void {
+    this.communicationService.emitComponenteCargado();
   }
 
   agregarUsuario() {
     if (this.usuarioForm.invalid) {
+      this.usuarioForm.markAllAsTouched(); // Clear
       return;
     }
 
@@ -89,6 +95,8 @@ export class AdminComponent implements OnInit{
         // Manejar la respuesta exitosa
         console.log(response);
         this.actualizarUsuarios() // Limpiar el formulario después de enviarlo
+        alert("¡Usuario creado con éxito!")
+        this.usuarioForm.reset();
       },
       error => {
         // Manejar el error
