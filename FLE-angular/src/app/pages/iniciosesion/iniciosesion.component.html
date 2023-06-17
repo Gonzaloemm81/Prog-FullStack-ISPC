@@ -5,43 +5,16 @@
     (ngSubmit)="onEnviar($event)"
     class="mt-4"
   >
-    <div class="m-3">
+    <div class="form-group mt-2">
       <input
-        type="text"
-        placeholder="usuario"
-        id="usuario"
-        formControlName="user"
+        type="email"
+        placeholder="Email"
+        id="email"
+        formControlName="email"
         class="form-control"
       />
-      <div *ngIf="User?.errors && User?.touched">
-        <p *ngIf="User?.hasError('required')" class="text-danger">
-          El usuario es obligatorio.
-        </p>
-        <p *ngIf="User?.errors?.['minlength']" class="text-danger">
-          El usuario debe contener almenos 8 caracteres.
-        </p>
-        <p *ngIf="User?.errors?.['maxlength']" class="text-danger">
-          El usuario debe contener máximo 20 caracteres.
-        </p>
-        <p *ngIf="User?.errors?.['pattern']" class="text-danger">
-          El usuario solo debe contener letras y/o números.
-        </p>
-      </div>
     </div>
-
-    <div class="m-3">
-            <input type="email" class="form-control" placeholder="Enter email" id='email'formControlName="mail">
-            <div *ngIf="Mail?.errors && Mail?.touched">
-                <p *ngIf="Mail?.hasError('required')" class="text-danger">
-                    El email es requerido.
-                </p>
-    
-                <p *ngIf="Mail?.hasError('email')" class="text-danger">
-                    El formato del email debe ser valido.
-                </p>
-            </div>
-    </div>
-    <div class="m-3">
+    <div class="form-group">
       <input
         type="password"
         placeholder="contraseña"
@@ -59,19 +32,19 @@
       </div>
     </div>
 
-    <div class="form-check m-3" >
+    <div class="form-check">
       <input
         type="checkbox"
         id="recordarme"
+        (ngModel)="(recordarme)"
         class="form-check-input"
       />
       <label for="recordarme" class="form-check-label">recordarme</label>
     </div>
-    <div class="m-3 text-center">
-      <button class="btn mt-3" type="submit">Ingresar</button>
-      <button class="registrarse btn mt-3 btn-outline-dark">
-        <a href="registro">Registrarse</a>
+
+    <button class="btn mt-3" type="submit">Ingresar</button>
+    <button class="registrarse btn mt-3 btn-outline-dark">
+      <a href="registro">Registrarse</a>
     </button>
-   </div>
   </form>
 </section>
