@@ -4,16 +4,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
         NavbarComponent,
-        FooterComponent
+        FooterComponent,
+        InicioComponent,
     ],
     exports: [
         HeaderComponent, FooterComponent,
-        NavbarComponent
+        NavbarComponent,InicioComponent,
     ],
     imports: [
         CommonModule, RouterModule

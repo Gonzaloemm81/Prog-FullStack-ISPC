@@ -108,6 +108,7 @@ export class CarritoComponent implements OnInit {
         actions.order.get().then((details: any) => {
 
           console.log('onApprove - you can get full order details inside.', details);
+          window.location.reload();
         });
       },
       onClientAuthorization: (data) => {
