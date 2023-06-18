@@ -10,6 +10,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ContactoComponent } from './Contacto/contacto.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CalculadoraComponent,
     CarritoComponent,
     ContactoComponent,
-    SucursalesComponent
+    SucursalesComponent,
+    
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule, NgxPayPalModule,
   ],
   exports: [
     RegistroComponent,
@@ -36,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CalculadoraComponent,
     CarritoComponent,
     ContactoComponent,
-    SucursalesComponent
+    SucursalesComponent,
+    
 
   ]
 })

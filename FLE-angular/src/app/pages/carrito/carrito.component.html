@@ -1,40 +1,65 @@
 <section>
-    <form action="#" method="post" [formGroup]="form" (ngSubmit)="onEnviar($event)">
-      <h3>Registro de Compra</h3>
+  <h3>Registro de Compra</h3>
+
+  <form [formGroup]="carritoForm" action="" class="container">
+    <label for="servChoice">Servicio: </label>
+    <select formControlName="servChoice" id="servChoice" name="servChoice">
+      <option
+        *ngFor="let servicios of serv"
+        value="{{ servicios.precio_kg_km }}"
+      >
+        {{ servicios.nombre_servicio }}
+      </option>
+    </select>
+    <br /><br />
+    <label for="sucursalInicio">Sucursal de Inicio:</label>
+    <select
+      formControlName="sucursalInicio"
+      id="sucursalInicio"
+      name="sucursalInicio"
+    >
+      <option *ngFor="let ciudad of sucursales" value="{{ ciudad.id }}">
+        Sucursal {{ ciudad.nombre }}
+      </option>
+    </select>
+    <br /><br />
+    <label for="sucursalFinal">Sucursal de Destino:</label>
+    <select
+      formControlName="sucursalFinal"
+      id="sucursalFinal"
+      name="sucursalFinal"
+    >
+      <option *ngFor="let ciudad of sucursales" value="{{ ciudad.id }}">
+        Sucursal {{ ciudad.nombre }}
+      </option>
+    </select>
+    <br /><br />
+    <div class="d-flex justify-content-between" *ngFor="let item of items">
+      <p *ngIf="agregado">{{ item | currency }}</p>
+      <button class="btn btn-outline-danger mb-2" (click)="quitar(item)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+    <input
+      class="btn btn-dark"
+      type="submit"
+      value="Agregar al carrito"
+      (click)="agregarAlCarrito()"
+    />
   
-      <label for="nombre_cliente">Nombre del Cliente:</label>
-      <input type="text" id="nombre_cliente" name="nombre_cliente" formControlName="nombre_cliente" />
-      <div *ngIf="Nombre_cliente?.errors && Nombre_cliente?.touched">
-        <p *ngIf="Nombre_cliente?.hasError('required')" class="text-danger">
-          Nombre del Cliente Requerido</p></div>
-  
-      <label for="correo">Correo Electronico:</label>
-      <input type="text" id="correo" name="correo" formControlName="correo" />
-      <div *ngIf="Correo_Electronico?.errors && Correo_Electronico?.touched">
-        <p *ngIf="Correo_Electronico?.hasError('required')" class="text-danger">
-          Correo Electronico Requerido</p></div>
-  
-      <label for="producto">Producto:</label>
-      <div class="producto">
-         <!-- <img src="icono_producto.jpg" alt="icono del producto"> -->
-         <div class="datos_producto">
-            <span class="nombre_producto">Nombre del Producto</span>
-            <span class="precio_producto">$10.00</span>
-            <!-- <img src="icono_eliminar_producto.png" alt="icono para eliminar el producto"/> -->    
-         </div>
-      </div>
-      <div class="subtotal">
-             <span>Subtotal:</span>
-             <span>$10.00</span>
-      </div>
-      <div class="impuestos">
-             <span>Impuestos (IVA Argentina 21%):</span>
-             <span>$2.10</span>
-      </div>
-      <div class="total">
-             <span>Total:</span>
-             <span>$12.10</span>
-      </div>
-      <input type="submit" value="Registrar Pedido"/>
-    </form>
+<!-- 
+     <button
+      class="btn btn-light"
+      type="submit"
+      
+      (click)="pagar()">Pagar
+      <i class="fa-brands fa-paypal"></i></button>
+      -->
+    
+    
+    
+    <h3 class="mt-3">Total a pagar:</h3>
+    <h3>{{ total | currency }}</h3>
+    <ngx-paypal [config]="payPalConfig" (click)="pagar()"></ngx-paypal>
+  </form>
 </section>

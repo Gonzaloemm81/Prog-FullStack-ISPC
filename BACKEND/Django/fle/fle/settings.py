@@ -58,6 +58,19 @@ CORS_ORIGIN_WHITELIST = ["http://localhost:4200","http://localhost:3000"]
 
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200',  # Agrega aquí los orígenes permitidos
+]
+
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+]
+
+#Configuracion del CORS 
+CORS_ORIGIN_WHITELIST = ["http://localhost:4200","http://localhost:3000"]
+
+CORS_ALLOW_CREDENTIALS = True
+
 ROOT_URLCONF = 'fle.urls'
 
 TEMPLATES = [
