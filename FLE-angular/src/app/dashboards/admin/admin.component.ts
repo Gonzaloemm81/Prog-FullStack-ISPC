@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommunicationService } from 'src/app/services/communication.service';
+import { FacturasService } from 'src/app/services/facturas.service';
 
 @Component({
   selector: 'app-admin',
@@ -15,18 +16,29 @@ export class AdminComponent implements OnInit{
   usuarioForm: FormGroup;
   userForm: boolean = false;
 
+  verFactura: any;
   usuarios: any; 
 
 
   // Consumo de la Api para ver usuarios
   constructor(private user: UsuariosService, 
             private formBuilder: FormBuilder,
-            private communicationService: CommunicationService){
+            private communicationService: CommunicationService,
+            private facturas: FacturasService) {
 
     // consumo de la Api para ver usuarios
     this.user.obtenerUsuarios().subscribe({
       next: (userData)=>{
         this.usuarios = userData;
+      },
+      error:(errorData)=>{
+        console.error(errorData);
+      }
+    });
+
+    this.facturas.obtenerFacturas().subscribe({
+      next: (facturaData)=>{
+        this.verFactura = facturaData;
       },
       error:(errorData)=>{
         console.error(errorData);
@@ -138,4 +150,3 @@ export class AdminComponent implements OnInit{
     );
   }
 }
-
