@@ -3,6 +3,17 @@ import { ApiService } from 'src/app/services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IPayPalConfig } from 'ngx-paypal';
 import { ICreateOrderRequest } from 'ngx-paypal'
+import { FacturasService } from 'src/app/services/facturas.service';
+
+class Facturas {
+  precio_total: number = 0;
+  cliente_id: string = "";
+  constructor(precio:number, cliente:string) {
+    this.precio_total = precio;
+    this.cliente_id = cliente;
+  }
+}
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -11,7 +22,7 @@ import { ICreateOrderRequest } from 'ngx-paypal'
 export class CarritoComponent implements OnInit {
   //paypal
   public payPalConfig?: IPayPalConfig;
-
+  user: any;
   serv: any
   carritoForm: FormGroup;
   total: number = 0;
@@ -34,7 +45,9 @@ export class CarritoComponent implements OnInit {
     [250, 300, 200, 0]
   ];
 
-  constructor(public api: ApiService, private formBuilder: FormBuilder) {
+
+
+  constructor(public api: ApiService, private formBuilder: FormBuilder, private factura: FacturasService) {
     this.api.obtenerServicios().subscribe({
       next: (apiData) => {
         this.serv = apiData;
@@ -58,9 +71,12 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
     this.initConfig();
   }
-
+  
   //paypal
   private initConfig(): void {
+    if(localStorage.getItem('currentUser')!==null){
+      this.user = localStorage.getItem('currentUser')
+      this.user = JSON.parse(this.user);
     this.payPalConfig = {
 
       currency: "USD",
@@ -108,6 +124,22 @@ export class CarritoComponent implements OnInit {
         actions.order.get().then((details: any) => {
 
           console.log('onApprove - you can get full order details inside.', details);
+          const pago = {
+            precio_total: this.total.toString(),
+            cliente_id: this.user.username,
+            emisor: "Admin"
+          }
+          this.factura.agregarFacturas(pago).subscribe(
+            response => {
+              // Manejar la respuesta exitosa
+              console.log(response);
+              alert("¡Factura agregada exitosamente!")
+            },
+            error => {
+              // Manejar el error
+              console.error(error);
+            }
+          );
           window.location.reload();
         });
       },
@@ -128,7 +160,7 @@ export class CarritoComponent implements OnInit {
       }
     }
 
-  }
+    }}
 
   agregarAlCarrito() {
 
