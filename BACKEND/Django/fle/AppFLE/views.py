@@ -3,8 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework import status, generics, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import UserSerializer, ServiciosSerializer
-from .models import Servicios
+from .serializers import FacturasSerializer, UserSerializer, ServiciosSerializer
+from .models import Clientes, Servicios, Factura
 from django.contrib.auth import get_user_model 
 
 
@@ -44,3 +44,7 @@ class ServiciosViewSet(viewsets.ModelViewSet):
 class UsersViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
+
+class FacturasViewSet(viewsets.ModelViewSet):
+    queryset = Factura.objects.all()
+    serializer_class = FacturasSerializer
