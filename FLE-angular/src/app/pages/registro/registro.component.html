@@ -1,49 +1,96 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+<section>
+  <div>
+    <form
+      [formGroup]="usuarioForm"
+      action=""
+      class="container"
+      (ngSubmit)="agregarUsuario()"
+    >
+      <h2>Nuevo Usuario</h2>
+      <label for="usuario">Usuario:</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="user"
+        id="usuario"
+      />
+      <div *ngIf="User?.errors && User?.touched">
+        <p *ngIf="User?.hasError('required')" class="text-danger">
+          El usuario es obligatorio.
+        </p>
+        <p *ngIf="User?.errors?.['minlength']" class="text-danger">
+          El usuario debe contener almenos 6 caracteres.
+        </p>
+        <p *ngIf="User?.errors?.['maxlength']" class="text-danger">
+          El usuario debe contener un maximo de 20 caracteres.
+        </p>
+        <p *ngIf="User?.errors?.['pattern']" class="text-danger">
+          El usuario debe contener solamente letras y/o numeros.
+        </p>
+      </div>
 
-@Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
-})
-export class RegistroComponent implements OnInit {
-  registroForm: FormGroup;
+      <label for="email">Email:</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="email"
+        id="email"
+      />
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger">
+          El email es obligatorio.
+        </p>
+        <p *ngIf="Email?.errors?.['email']" class="text-danger">
+          El correo debe ser valido.
+        </p>
+      </div>
 
-  constructor(private formBuilder: FormBuilder) { 
-    this.registroForm = this.formBuilder.group({
-    });
+      <label for="password">Contraseña:</label>
+      <input
+        class="form-control"
+        type="password"
+        formControlName="password"
+        id="password"
+      />
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
+          La contraseña es obligatoria.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+          El usuario debe contener almenos 8 caracteres.
+        </p>
+      </div>
 
-  }
-  ngOnInit() {
-    this.registroForm = this.formBuilder.group({
-      idUsuario: ['', Validators.required],
-      usuario: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.email]],
-      contrasena: ['', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.[a-z])(?=.[A-Z])(?=.\d).$/)]],
-      confirmContrasena: ['', Validators.required]
-    }, {
-      validator: this.mustMatch('contrasena', 'confirmContrasena')
-    });
-  }
-
-  onRegistro(event: any) {
-
-  }
-
-  mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-
-      if (matchingControl.errors && !matchingControl.hasError('mustMatch')){
-        return;
-      }
-
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
-    };
-  }
-}
+      <label for="">Es empleado:</label>
+      <br />
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-dark">
+          <input
+            formControlName="is_staff"
+            type="radio"
+            name="options"
+            id="option1"
+            autocomplete="off"
+            value="true"
+          />
+          Si
+        </label>
+        <label class="btn btn-outline-dark">
+          <input
+            formControlName="is_staff"
+            type="radio"
+            name="options"
+            id="option2"
+            autocomplete="off"
+            checked
+            value="false"
+          />
+          No
+        </label>
+      </div>
+      <br />
+      <br />
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
