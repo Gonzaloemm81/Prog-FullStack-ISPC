@@ -108,16 +108,16 @@ class Administrativo (models.Model):
 class Factura(models.Model):
     
     cod_factura= models.AutoField(primary_key=True)
-    cliente_id = models.ForeignKey(Clientes, to_field="id_cliente", on_delete=models.CASCADE)
-    emisor = models.ForeignKey(Administrativo, to_field="id_administrador", on_delete=models.CASCADE)
+    cliente_id = models.CharField(max_length=255, blank=False)
+    emisor = models.CharField(max_length=255, blank=False)
     precio_total = models.DecimalField(blank=False, decimal_places=2, max_digits=10)
     class Meta:
         db_table="factura"
         verbose_name="Tabla de facturas"
         verbose_name_plural="Facturas"
-    def __unicode__(self):
+    def _unicode_(self):
         return self.cod_factura
-    def __str__(self):
+    def _str_(self):
         return self.cod_factura
     
 class Carrito(models.Model):
