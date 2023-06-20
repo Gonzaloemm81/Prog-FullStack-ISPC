@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model 
 from django.contrib.auth.hashers import make_password
-from .models import Servicios
+from .models import  Factura, Servicios
 
 
 
@@ -24,3 +24,8 @@ class ServiciosSerializer(serializers.ModelSerializer):
     class Meta:
         model=Servicios
         fields= '__all__'
+        
+class FacturasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Factura
+        fields= '_all_'        
