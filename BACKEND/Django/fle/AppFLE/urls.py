@@ -5,6 +5,7 @@ from AppFLE import views
 
 router= routers.DefaultRouter()
 router.register(r'servicios',views.ServiciosViewSet)
+router.register(r'facturas',views.FacturasViewSet)
 router.register(r'usuarios',views.UsersViewSet)
 
 
