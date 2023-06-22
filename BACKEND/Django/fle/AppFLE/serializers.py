@@ -28,4 +28,4 @@ class ServiciosSerializer(serializers.ModelSerializer):
 class FacturasSerializer(serializers.ModelSerializer):
     class Meta:
         model=Factura
-        fields= '_all_'        
+        fields= '__all__'        
