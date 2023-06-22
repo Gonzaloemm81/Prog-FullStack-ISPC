@@ -115,9 +115,9 @@ class Factura(models.Model):
         db_table="factura"
         verbose_name="Tabla de facturas"
         verbose_name_plural="Facturas"
-    def _unicode_(self):
+    def __unicode__(self):
         return self.cod_factura
-    def _str_(self):
+    def __str__(self):
         return self.cod_factura
     
 class Carrito(models.Model):
